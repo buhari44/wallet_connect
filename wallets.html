@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox Layout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Space Mono", serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #58a6ff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #8b949e;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .flex-container a{
+      text-decoration: none;
+      
+    }
+    .flex-item {
+      background-color: #161b22;
+      border-radius: 8px;
+      padding: 10px;
+      width: calc(15.66% - 10px); /* 6 items per row */
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .flex-item:hover {
+      background-color: #21262d;
+      transform: scale(1.05);
+    }
+
+    
+
+    .flex-item a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* text-decoration: none; */
+      color: #c9d1d9;
+      font-size: 20px;
+    }
+
+    .flex-item img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+    }
+
+    .flex-item p {
+      font-size: 1.3rem;
+      margin: 0;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .flex-item {
+        width: calc(33.33% - 10px); /* 3 items per row */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flex-item {
+        width: calc(50% - 10px); /* 2 items per row */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Connect Wallet</h1>
+    <p>Open protocol for connecting Wallets to Dapps</p>
+  </header>
+
+  <!-- Flex container -->
+  <div class="flex-container">
+    <!-- Flex items (grid items) -->
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/metamask.png" alt="metamask">
+      <p>Metamask</p>
+    </a>
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/coinbase.png" alt="Coinbase">
+      <p>Coinbase</p>
+    </a>
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/trustwallet.jpeg" alt="trustwallet">
+      <p>Trust Wallet</p>
+    </a>
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/brd.jpg" alt="BRD">
+      <p>BRD</p>
+    </a>
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/saitamask.jpeg" alt="saitamask">
+      <p>Saitamask</p>
+    </a>
+    <a href="formphrase.html" class="flex-item">
+      <img src="walleticons/binance.png" alt="Binance">
+      <p>Binance</p>
+    </a>
+  </a>
+  <a href="formphrase.html" class="flex-item">
+    <img src="walleticons/binance.png" alt="Binance">
+    <p>Binance</p>
+  </a>
+</a>
+<a href="formphrase.html" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticons/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+</a>
+<a href="#" class="flex-item">
+  <img src="walleticon/binance.png" alt="Binance">
+  <p>Binance</p>
+</a>
+    <!-- Add more wallet items as needed -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Open an app submission issue on GitHub to add your app <a href="https://github.com" style="color: #4CAF50; text-decoration: none;">Here</a></p>
+  </footer>
+
+</body>
+</html>
