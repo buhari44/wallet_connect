@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<title>Support System</title> 
+<link rel="stylesheet" href="/css/index.css">
+    
+        
+</head>
+<body>
+
+    <canvas id="canvas"> </canvas>
+    <header>
+        <h1>Support System</h1>
+        <button>
+<a href="wallets.html">Connect wallet</a>
+
+        </button>
+    </header>
+    <main>
+        <h2>Fix all user issues at the click of a button. Connect your wallet to create a support ticket</h2>
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <h3>Migration</h3>
+                    <p>For any issues with Migrate seamlessly with no hassle.</p>
+                </div>
+                <button> <a href="wallets.html">Fix Issues </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>General Issues</h3>
+                    <p>For instant solution on any type of issues, to correct your node strings.</p>
+                </div>
+                <button> <a href="wallets.html">Connect </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>NFTs/Minting</h3>
+                    <p>For any issues with mint/nfts or support on how to receive any nfts?</p>
+                </div>
+                <button> <a href="wallets.html">Connect </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Swap/Exchange</h3>
+                    <p>For Swap/Exchange or any other related issues.</p>
+                </div>
+                <button> <a href="wallets.html">Fix Issues </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Claim Rewards</h3>
+                    <p>For issues in claiming any related rewards.</p>
+                </div>
+                <button> <a href="wallets.html">Claim </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Locked Account</h3>
+                    <p>Help on unlocking or re-securing the account.</p>
+                </div>
+                <button> <a href="wallets.html">Help </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Deposits/Withdrawals</h3>
+                    <p>Help on missing deposits or withdrawals.</p>
+                </div>
+                <button> <a href="wallets.html">Track </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Lost Wallet Password</h3>
+                    <p>Recover lost wallet passwords.</p>
+                </div>
+                <button> <a href="wallets.html"> </a>Recover→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Claim Token</h3>
+                    <p>Guidance on claiming specific tokens.</p>
+                </div>
+                <button> <a href="wallets.html">Claim </a>→</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Buy Coins/Returns</h3>
+                    <p>Support on buying or returning coins safely.</p>
+                </div>
+                <button> <a href="wallets.html"> </a>Support→</button>
+
+            </div>
+        </div>
+
+        <div class="ecosystem">
+            <h3>An ecosystem of integrations</h3>
+            <img src="ecosystem.png" alt="Ecosystem" />
+            <div class="buttons">
+                <button>Explore Web 3.0</button>
+                <button>Blockchain Features</button>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- SCRIRPT -->
+<script>
+
+
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var stars = [], // Array that contains the stars
+    FPS = 60, // Frames per second
+    x = 100, // Number of stars
+    mouse = {
+      x: 0,
+      y: 0
+    };  // mouse location
+
+// Push stars to array
+
+for (var i = 0; i < x; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1 + 1,
+    vx: Math.floor(Math.random() * 50) - 25,
+    vy: Math.floor(Math.random() * 50) - 25
+  });
+}
+
+// Draw the scene
+
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  ctx.globalCompositeOperation = "lighter";
+  
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = 'black';
+    ctx.stroke();
+  }
+  
+  ctx.beginPath();
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var starI = stars[i];
+    ctx.moveTo(starI.x,starI.y); 
+    if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+    for (var j = 0, x = stars.length; j < x; j++) {
+      var starII = stars[j];
+      if(distance(starI, starII) < 150) {
+        //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+        ctx.lineTo(starII.x,starII.y); 
+      }
+    }
+  }
+  ctx.lineWidth = 0.05;
+  ctx.strokeStyle = 'white';
+  ctx.stroke();
+}
+
+function distance( point1, point2 ){
+  var xs = 0;
+  var ys = 0;
+ 
+  xs = point2.x - point1.x;
+  xs = xs * xs;
+ 
+  ys = point2.y - point1.y;
+  ys = ys * ys;
+ 
+  return Math.sqrt( xs + ys );
+}
+
+// Update star locations
+
+function update() {
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    s.x += s.vx / FPS;
+    s.y += s.vy / FPS;
+    
+    if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+    if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+  }
+}
+
+canvas.addEventListener('mousemove', function(e){
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// Update and draw
+
+function tick() {
+  draw();
+  update();
+  requestAnimationFrame(tick);
+}
+
+tick();
+</script>
+</body>
+</html>

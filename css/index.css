@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the canvas behind other content */
+    background-color: #0e1a2b;
+
+}
+body {
+    font-family: "Space Mono", serif;
+    /* */
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111e30;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: #6b57f5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button a{
+
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+header button:hover {
+    background-color: #5946d9;
+}
+
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.card {
+    background-color: #192a45;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card div {
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.card button {
+    padding: 8px 12px;
+    background-color: #6b57f5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #5946d9;
+}
+
+.ecosystem {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.ecosystem img {
+    max-width: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #6b57f5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #5946d9;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+}
